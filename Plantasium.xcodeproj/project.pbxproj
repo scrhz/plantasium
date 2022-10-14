@@ -11,9 +11,10 @@
 		371D1D7D28EA0B2300BC71E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D7C28EA0B2300BC71E2 /* ContentView.swift */; };
 		371D1D7F28EA0B2300BC71E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371D1D7E28EA0B2300BC71E2 /* Assets.xcassets */; };
 		371D1D8228EA0B2300BC71E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371D1D8128EA0B2300BC71E2 /* Preview Assets.xcassets */; };
-		371D1D8C28EA0B2400BC71E2 /* PlantasiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D8B28EA0B2400BC71E2 /* PlantasiumTests.swift */; };
 		371D1D9628EA0B2400BC71E2 /* PlantasiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */; };
 		371D1D9828EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */; };
+		3772F68528F5ADBE00DA0921 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68428F5ADBE00DA0921 /* ModelTests.swift */; };
+		3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68628F5ADDB00DA0921 /* PlantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +41,11 @@
 		371D1D7E28EA0B2300BC71E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371D1D8128EA0B2300BC71E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		371D1D8728EA0B2400BC71E2 /* PlantasiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantasiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		371D1D8B28EA0B2400BC71E2 /* PlantasiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumTests.swift; sourceTree = "<group>"; };
 		371D1D9128EA0B2400BC71E2 /* PlantasiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantasiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITests.swift; sourceTree = "<group>"; };
 		371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3772F68428F5ADBE00DA0921 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		3772F68628F5ADDB00DA0921 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				371D1D7A28EA0B2300BC71E2 /* PlantasiumApp.swift */,
+				3772F68628F5ADDB00DA0921 /* PlantModel.swift */,
 				371D1D7C28EA0B2300BC71E2 /* ContentView.swift */,
 				371D1D7E28EA0B2300BC71E2 /* Assets.xcassets */,
 				371D1D8028EA0B2300BC71E2 /* Preview Content */,
@@ -113,7 +116,7 @@
 		371D1D8A28EA0B2400BC71E2 /* PlantasiumTests */ = {
 			isa = PBXGroup;
 			children = (
-				371D1D8B28EA0B2400BC71E2 /* PlantasiumTests.swift */,
+				3772F68428F5ADBE00DA0921 /* ModelTests.swift */,
 			);
 			path = PlantasiumTests;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371D1D7D28EA0B2300BC71E2 /* ContentView.swift in Sources */,
+				3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */,
 				371D1D7B28EA0B2300BC71E2 /* PlantasiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371D1D8C28EA0B2400BC71E2 /* PlantasiumTests.swift in Sources */,
+				3772F68528F5ADBE00DA0921 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

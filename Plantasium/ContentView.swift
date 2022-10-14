@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Plantasium
-//
-//  Created by Oscar Hesmondhalgh on 02/10/2022.
-//
-
 import SwiftUI
 
 struct ContentView: View {
