@@ -2,11 +2,15 @@ import Foundation
 
 let jsonFileName = "plantData.json"
 
-var stubPlant: Plant {
+var stubPlants: [Plant] {
     let oneDay = 60 * 60 * 24
     let oneWeek = 7 * oneDay
-    let stubPlant = Plant(name: "John", feedPeriod: TimeInterval(oneWeek))
-    save(stubPlant)
+    let plants = [
+        Plant(name: "John", feedPeriod: TimeInterval(oneWeek)),
+        Plant(name: "Mary", feedPeriod: TimeInterval(2 * oneWeek)),
+        Plant(name: "Abdul", feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
+    ]
+    save(plants)
     return load(jsonFileName)
 }
 
@@ -29,21 +33,20 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-func save(_ plant: Plant) {
-    let jsonString = """
-        {
-            "name": "\(plant.name)",
-            "species": "\(plant.species ?? "")",
-            "feedPeriod": \(plant.feedPeriod),
-        }
-        """
+func save(_ plants: [Plant]) {
+    let data: Data
+
+    do {
+        let encoder = JSONEncoder()
+        try data = encoder.encode(plants)
+    } catch {
+        fatalError("Couldn't encode:\n\(plants)")
+    }
 
     let pathWithFilename = filePath(jsonFileName)
 
     do {
-        try jsonString.write(to: pathWithFilename,
-                             atomically: true,
-                             encoding: .utf8)
+        try data.write(to: pathWithFilename)
     } catch {
         fatalError("Couldn't save to \(pathWithFilename):\n\(error)")
     }

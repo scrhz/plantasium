@@ -13,12 +13,14 @@ struct RowView: View {
                 Text(plant.name)
                     .bold()
                 Text(plant.species ?? "Unknown species")
+                    .italic()
             }
             Spacer()
             VStack(alignment: .trailing) {
                 Text("Next feed:")
                 Text(plant.nextFeed.formatted())
                     .fontWeight(.light)
+                    .dynamicTypeSize(.small)
             }.padding(10)
         }
     }
@@ -26,6 +28,6 @@ struct RowView: View {
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView(plant: stubPlant)
+        RowView(plant: stubPlants[0])
     }
 }
