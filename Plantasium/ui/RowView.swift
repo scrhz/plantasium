@@ -9,14 +9,23 @@ struct RowView: View {
             plant.image
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text(plant.name)
+            VStack(alignment: .leading) {
+                Text(plant.name)
+                    .bold()
+                Text(plant.species ?? "Unknown species")
+            }
             Spacer()
+            VStack(alignment: .trailing) {
+                Text("Next feed:")
+                Text(plant.nextFeed.formatted())
+                    .fontWeight(.light)
+            }.padding(10)
         }
     }
 }
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView(plant: plants)
+        RowView(plant: stubPlant)
     }
 }

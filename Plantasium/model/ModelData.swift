@@ -2,7 +2,7 @@ import Foundation
 
 let jsonFileName = "plantData.json"
 
-var plants: Plant {
+var stubPlant: Plant {
     let oneDay = 60 * 60 * 24
     let oneWeek = 7 * oneDay
     let stubPlant = Plant(name: "John", feedPeriod: TimeInterval(oneWeek))
@@ -35,7 +35,6 @@ func save(_ plant: Plant) {
             "name": "\(plant.name)",
             "species": "\(plant.species ?? "")",
             "feedPeriod": \(plant.feedPeriod),
-            "lastFeed": \(plant.lastFeed ?? Date.now.timeIntervalSince1970),
         }
         """
 
