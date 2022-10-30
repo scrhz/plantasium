@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    var homeView: UITabBarController!
+    
     var body: some View {
+
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
         }
         .padding()
     }
