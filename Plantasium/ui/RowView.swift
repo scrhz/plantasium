@@ -28,6 +28,8 @@ struct RowView: View {
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView(plant: stubPlants[0])
+        Group {
+            RowView(plant: stubPlants[0])
+        }.previewLayout(.sizeThatFits)
     }
 }

@@ -1,11 +1,12 @@
 import Foundation
 import SwiftUI
 
-struct Plant: Hashable, Codable {
+struct Plant: Hashable, Codable, Identifiable {
+    var id: UUID
     var name: String
-    var species: String?
     var feedPeriod: TimeInterval
-    var lastFeed: TimeInterval?
+    var species: String?
+    var lastFeed: Date?
     private var imageName: String?
 
     var image: Image {
@@ -14,16 +15,17 @@ struct Plant: Hashable, Codable {
 
     var nextFeed: Date {
         guard let lastFeed = lastFeed else { return Date.now }
-        return Date(timeIntervalSince1970: lastFeed).addingTimeInterval(feedPeriod)
+        return Date(timeInterval: feedPeriod, since: lastFeed)
     }
 
     init(
         name: String,
-        species: String? = nil,
         feedPeriod: TimeInterval,
-        imageName: String? = nil,
-        lastFeed: TimeInterval? = nil
+        species: String? = nil,
+        lastFeed: Date? = nil,
+        imageName: String? = nil
     ) {
+        self.id = UUID()
         self.name = name
         self.species = species
         self.imageName = imageName

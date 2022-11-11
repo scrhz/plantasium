@@ -4,11 +4,7 @@ struct ContentView: View {
     var homeView: UITabBarController!
     
     var body: some View {
-
-        VStack {
-
-        }
-        .padding()
+        ListView()
     }
 }
 
