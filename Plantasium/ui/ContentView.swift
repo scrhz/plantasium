@@ -4,7 +4,10 @@ struct ContentView: View {
     var homeView: UITabBarController!
     
     var body: some View {
-        ListView()
+        NavigationView {
+            ListView()
+        }
+        .navigationTitle("Plants")
     }
 }
 

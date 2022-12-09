@@ -13,6 +13,7 @@
 		371D1D8228EA0B2300BC71E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371D1D8128EA0B2300BC71E2 /* Preview Assets.xcassets */; };
 		371D1D9628EA0B2400BC71E2 /* PlantasiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */; };
 		371D1D9828EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */; };
+		3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746756D2920FECE00958500 /* PlantDetailView.swift */; };
 		3772F68528F5ADBE00DA0921 /* PlantModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */; };
 		3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68628F5ADDB00DA0921 /* PlantModel.swift */; };
 		37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B93756290C0D3200231C56 /* ModelUtils.swift */; };
@@ -50,6 +51,7 @@
 		371D1D9128EA0B2400BC71E2 /* PlantasiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantasiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITests.swift; sourceTree = "<group>"; };
 		371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3746756D2920FECE00958500 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModelTests.swift; sourceTree = "<group>"; };
 		3772F68628F5ADDB00DA0921 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		37B93756290C0D3200231C56 /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				371D1D7C28EA0B2300BC71E2 /* ContentView.swift */,
 				37DC118D290EE9AD001B5088 /* ListView.swift */,
 				37B93759290C110200231C56 /* RowView.swift */,
+				3746756D2920FECE00958500 /* PlantDetailView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				37B9375A290C110200231C56 /* RowView.swift in Sources */,
 				37DC118E290EE9AD001B5088 /* ListView.swift in Sources */,
 				37D99F93291EF17400CF33AD /* Utils.swift in Sources */,
+				3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */,
 				37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */,
 				3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */,
 				371D1D7B28EA0B2300BC71E2 /* PlantasiumApp.swift in Sources */,
