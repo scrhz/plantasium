@@ -12,12 +12,12 @@ struct PlantDetailView: View {
             Section(header: Text("Feeding")) {
                 //Time picker for
             }
-        }
+        }.navigationTitle("Edit Plant")
     }
 }
 
 struct PlantView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantDetailView(plant: stubPlants[0])
+        PlantDetailView(plant: PlantModel().plants[0])
     }
 }

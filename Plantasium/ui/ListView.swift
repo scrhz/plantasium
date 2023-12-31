@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-        List(stubPlants) { plant in
+        List(PlantModel().plants) { plant in
             NavigationLink {
                 PlantDetailView(plant: plant)
             } label: {

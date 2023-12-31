@@ -6,9 +6,9 @@ var stubPlants: [Plant] {
     let oneDay = 60 * 60 * 24
     let oneWeek = 7 * oneDay
     let plants = [
-        Plant(name: "John", feedPeriod: TimeInterval(oneWeek)),
-        Plant(name: "Mary", feedPeriod: TimeInterval(2 * oneWeek)),
-        Plant(name: "Abdul", feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
+        Plant(name: "John"), //, feedPeriod: TimeInterval(oneWeek)),
+        Plant(name: "Mary"), //, feedPeriod: TimeInterval(2 * oneWeek)),
+        Plant(name: "Abdul"), //, feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
     ]
     ModelUtils.save(plants, fileName: jsonFileName)
     return ModelUtils.load(jsonFileName)
