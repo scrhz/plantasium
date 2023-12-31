@@ -2,12 +2,16 @@ import Foundation
 import SwiftUI
 
 struct ListView: View {
+    @StateObject var plantModel = PlantModel()
+
     var body: some View {
-        List(PlantModel().plants) { plant in
+        List(plantModel.plants) { plant in
             NavigationLink {
                 PlantDetailView(plant: plant)
             } label: {
                 RowView(plant: plant)
+            }.swipeActions {
+                Button(action: { plantModel.delete(plant) }, label: { Label("Delete", systemImage: "trash") }).tint(.red)
             }
         }
     }

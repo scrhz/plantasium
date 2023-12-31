@@ -7,6 +7,13 @@ class PlantModel: ObservableObject {
     init() {
         self.plants = stubPlants
     }
+
+    func delete(_ plant: Plant) {
+        guard let deletionIndex = plants.firstIndex(of: plant) else {
+            fatalError("Couldn't find plant \(plant.id)")
+        }
+        plants.remove(at: deletionIndex)
+    }
 }
 
 class Plant: Hashable, Codable, Identifiable, ObservableObject {
