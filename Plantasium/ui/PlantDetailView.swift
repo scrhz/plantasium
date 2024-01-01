@@ -27,7 +27,7 @@ struct PlantDetailEditView: View {
 }
 
 struct PlantDetailNewView: View {
-    @State var plant = Plant(name: "")
+    @StateObject var plant = Plant(name: "")
     @StateObject var plantModel: PlantModel
 
     var body: some View {
@@ -36,7 +36,7 @@ struct PlantDetailNewView: View {
                 plantModel.plants.append(plant)
             } label: {
                 Text("Save")
-            }
+            }.disabled(plant.name.isEmpty)
         }.navigationTitle("New Plant")
     }
 }
