@@ -7,11 +7,17 @@ struct ListView: View {
     var body: some View {
         List(plantModel.plants) { plant in
             NavigationLink {
-                PlantDetailView(plant: plant)
+                PlantDetailEditView(plant: plant)
             } label: {
                 RowView(plant: plant)
             }.swipeActions {
                 Button(action: { plantModel.delete(plant) }, label: { Label("Delete", systemImage: "trash") }).tint(.red)
+            }
+        }.toolbar {
+            NavigationLink {
+                PlantDetailNewView(plantModel: plantModel)
+            } label: {
+                Label("Add new plant", systemImage: "plus")
             }
         }
     }
