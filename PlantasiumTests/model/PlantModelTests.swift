@@ -8,7 +8,7 @@ final class PlantModelTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testPlantModelInitialisesCorrectlyForEssentialParameters() {
+    func testPlantInitialisesCorrectlyForEssentialParameters() {
         let testPlant = Plant(
             name: "foo",
             feedPeriod: TimeInterval(TestUtils.oneWeek)
@@ -20,17 +20,17 @@ final class PlantModelTests: XCTestCase {
             Calendar.current.compare(testPlant.nextFeed, to: Date.now, toGranularity: .minute),
             ComparisonResult.orderedSame
         )
-        XCTAssertNil(testPlant.species)
+//        XCTAssertNil(testPlant.species)
         XCTAssertNotNil(testPlant.image)
     }
 
-    func testPlantModelInitialisesCorrectlyForExtraParameters() {
+    func testPlantInitialisesCorrectlyForExtraParameters() {
         let testPlant = Plant(
             name: "foo",
             feedPeriod: TimeInterval(TestUtils.oneWeek),
-            species: "bar",
-            lastFeed: Date(timeIntervalSinceNow: TimeInterval(-(2 * TestUtils.oneWeek))),
-            imageName: "doesntExist"
+//            species: "bar",
+            lastFeed: Date(timeIntervalSinceNow: TimeInterval(-(2 * TestUtils.oneWeek)))
+//            imageName: "doesntExist"
         )
 
         XCTAssertEqual(testPlant.name, "foo")
@@ -43,7 +43,9 @@ final class PlantModelTests: XCTestCase {
             ),
             ComparisonResult.orderedSame
         )
-        XCTAssertEqual(testPlant.species, "bar")
+//        XCTAssertEqual(testPlant.species, "bar")
         XCTAssertNotNil(testPlant.image)
     }
+
+    
 }

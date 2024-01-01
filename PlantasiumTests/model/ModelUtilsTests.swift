@@ -24,18 +24,19 @@ final class ModelDataTests: XCTestCase {
         let plantAll = Plant(
             name: "bar",
             feedPeriod: TimeInterval(64000),
-            species: "lorem",
-            lastFeed: Date(timeIntervalSince1970: TimeInterval(TestUtils.oneWeek * 100)),
-            imageName: "ipsum"
+            lastFeed: Date(timeIntervalSince1970: TimeInterval(TestUtils.oneWeek * 100))
+//            species: "lorem",
+//            imageName: "ipsum"
         )
 
         let plants = [plantEssential, plantAll]
 
         ModelUtils.save(plants, fileName: testDataJson)
 
-        let newPlants: [Plant] = ModelUtils.load(testDataJson)
+        let loadedPlants: [Plant] = ModelUtils.load(testDataJson)
 
-        XCTAssertNotNil(newPlants)
-        XCTAssertEqual(newPlants.count, 2)
+        XCTAssertNotNil(loadedPlants)
+        XCTAssertEqual(loadedPlants.count, 2)
+        XCTAssertEqual(plants, loadedPlants)
     }
 }
