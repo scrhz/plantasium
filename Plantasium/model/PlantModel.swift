@@ -2,10 +2,29 @@ import Foundation
 import SwiftUI
 
 class PlantModel: ObservableObject {
-    @Published var plants: [Plant]
+    @Published var plants: [Plant] = []
 
     init() {
-        self.plants = stubPlants
+        if !FileManager().fileExists(atPath: ModelUtils.filePath(ModelUtils.jsonFileName).path()) {
+//            let oneDay = 60 * 60 * 24
+//            let oneWeek = 7 * oneDay
+            plants = [
+                Plant(name: "John"), //, feedPeriod: TimeInterval(oneWeek)),
+                Plant(name: "Mary"), //, feedPeriod: TimeInterval(2 * oneWeek)),
+                Plant(name: "Abdul"), //, feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
+            ]
+            save()
+        }
+
+        load()
+    }
+
+    func save() {
+        ModelUtils.save(plants, fileName: ModelUtils.jsonFileName)
+    }
+
+    func load() {
+        plants = ModelUtils.load(ModelUtils.jsonFileName)
     }
 
     func delete(_ plant: Plant) {
