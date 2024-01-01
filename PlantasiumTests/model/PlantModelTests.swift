@@ -2,12 +2,7 @@ import XCTest
 import SwiftUI
 @testable import Plantasium
 
-final class PlantModelTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-    }
-
+final class PlantTests: TestCase {
     func testPlantInitialisesCorrectlyForEssentialParameters() {
         let testPlant = Plant(
             name: "foo",
@@ -46,6 +41,12 @@ final class PlantModelTests: XCTestCase {
 //        XCTAssertEqual(testPlant.species, "bar")
         XCTAssertNotNil(testPlant.image)
     }
+}
 
-    
+final class PlantModelTests: TestCase {
+    func testPlantModelDefaultsToFile() { XCTFail() }
+
+    func testPlantModelDeletesOnlySelectedPlant() { XCTFail() }
+
+    func testPlantModelSavesCorrectly() { XCTFail() }
 }

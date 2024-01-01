@@ -2,13 +2,8 @@ import XCTest
 import SwiftUI
 @testable import Plantasium
 
-final class ModelDataTests: XCTestCase {
+final class ModelDataTests: TestCase {
     let testDataJson = "testData.json"
-
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-    }
 
     override func tearDown() {
         let fileManager = FileManager()
