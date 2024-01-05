@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-class Plant: Hashable, Codable, Identifiable, ObservableObject {
+class Plant {
     var id: UUID
     @Published var name: String
     @Published var feedPeriod: FeedPeriod
@@ -27,25 +27,6 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         self.lastFeed = lastFeed
     }
 
-    func feed() {
-        lastFeed = Date.now
-    }
-
-    enum CodingKeys: CodingKey {
-        case id
-        case name
-        case feedPeriod
-        case lastFeed
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var values = encoder.container(keyedBy: CodingKeys.self)
-        try values.encode(name, forKey: .name)
-        try values.encode(id, forKey: .id)
-        try values.encode(feedPeriod.rawValue, forKey: .feedPeriod)
-        try values.encode(lastFeed, forKey: .lastFeed)
-    }
-
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         try name = values.decode(String.self, forKey: .name)
@@ -54,15 +35,8 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         try? lastFeed = values.decode(Date.self, forKey: .lastFeed)
     }
 
-    static func == (lhs: Plant, rhs: Plant) -> Bool {
-        return lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(id)
-        hasher.combine(feedPeriod)
-        hasher.combine(lastFeed)
+    func feed() {
+        lastFeed = Date.now
     }
 }
 
@@ -84,5 +58,33 @@ extension Plant {
                 return "One Fortnight"
             }
         }
+    }
+}
+
+extension Plant: Hashable, Codable, Identifiable, ObservableObject {
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case feedPeriod
+        case lastFeed
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encode(name, forKey: .name)
+        try values.encode(id, forKey: .id)
+        try values.encode(feedPeriod.rawValue, forKey: .feedPeriod)
+        try values.encode(lastFeed, forKey: .lastFeed)
+    }
+
+    static func == (lhs: Plant, rhs: Plant) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(id)
+        hasher.combine(feedPeriod)
+        hasher.combine(lastFeed)
     }
 }
