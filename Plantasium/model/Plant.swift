@@ -27,6 +27,10 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         self.lastFeed = lastFeed
     }
 
+    func feed() {
+        lastFeed = Date.now
+    }
+
     enum CodingKeys: CodingKey {
         case id
         case name
