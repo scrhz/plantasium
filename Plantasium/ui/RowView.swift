@@ -3,6 +3,14 @@ import SwiftUI
 
 struct RowView: View {
     @ObservedObject var plant: Plant
+    private var dateFormatStyle: Date.FormatStyle {
+        Date.FormatStyle()
+            .locale(Locale(identifier: "en-GB"))
+            .day(.defaultDigits)
+            .weekday(.abbreviated)
+            .month(.abbreviated)
+            .year(.twoDigits)
+    }
 
     var body: some View {
         HStack {
@@ -16,7 +24,7 @@ struct RowView: View {
             Spacer()
             VStack(alignment: .trailing) {
                 Text("Next feed:")
-                Text(plant.nextFeed.formatted())
+                Text(plant.nextFeed.formatted(dateFormatStyle))
                     .fontWeight(.light)
                     .dynamicTypeSize(.small)
             }.padding(10)
