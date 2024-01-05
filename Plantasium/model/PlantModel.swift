@@ -10,12 +10,7 @@ class PlantModel: ObservableObject {
 
     init() {
         if !modelExists {
-            plants = [
-                Plant(name: "John"), //, feedPeriod: TimeInterval(oneWeek)),
-                Plant(name: "Mary"), //, feedPeriod: TimeInterval(2 * oneWeek)),
-                Plant(name: "Abdul"), //, feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
-            ]
-
+            plants = ModelUtils.stubPlants
             save()
         }
 
@@ -39,25 +34,6 @@ class PlantModel: ObservableObject {
 }
 
 class Plant: Hashable, Codable, Identifiable, ObservableObject {
-    enum FeedPeriod: Int, CaseIterable, Identifiable {
-        var id: Self { self }
-
-        case oneWeek = 7
-        case tenDays = 10
-        case fortnight = 14
-
-        var label: String {
-            switch self {
-            case .oneWeek:
-                return "One Week"
-            case .tenDays:
-                return "Ten Days"
-            case .fortnight:
-                return "One Fortnight"
-            }
-        }
-    }
-
     var id: UUID
     @Published var name: String
     @Published var feedPeriod: FeedPeriod
@@ -115,5 +91,26 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         hasher.combine(id)
         hasher.combine(feedPeriod)
         hasher.combine(lastFeed)
+    }
+}
+
+extension Plant {
+    enum FeedPeriod: Int, CaseIterable, Identifiable {
+        var id: Self { self }
+
+        case oneWeek = 7
+        case tenDays = 10
+        case fortnight = 14
+
+        var label: String {
+            switch self {
+            case .oneWeek:
+                return "One Week"
+            case .tenDays:
+                return "Ten Days"
+            case .fortnight:
+                return "One Fortnight"
+            }
+        }
     }
 }

@@ -39,9 +39,56 @@ final class PlantTests: TestCase {
 }
 
 final class PlantModelTests: TestCase {
-    func testPlantModelDefaultsToFile() { XCTFail() }
+    override func setUp() {
+        super.setUp()
+        try? FileManager().removeItem(at: ModelUtils.filePath("plantData.json"))
+    }
 
-    func testPlantModelDeletesOnlySelectedPlant() { XCTFail() }
+    func testPlantModelCreatesStubPlantsIfMissing() {
+        let model = PlantModel()
 
-    func testPlantModelSavesCorrectly() { XCTFail() }
+        XCTAssertEqual(model.plants.count, 3)
+        XCTAssertEqual(model.plants, ModelUtils.stubPlants)
+    }
+
+    func testPlantModelDefaultsToFileIfPresent() {
+        let testPlants = [
+            Plant(name: "A plant"),
+            Plant(name: "Another plant")
+        ]
+
+        ModelUtils.save(testPlants, fileName: "plantData.json")
+
+        let model = PlantModel()
+
+        XCTAssertEqual(model.plants.count, 2)
+        XCTAssertEqual(model.plants, testPlants)
+    }
+
+    func testPlantModelDeletesOnlySelectedPlant() {
+        let plantToDelete = Plant(name: "deleting")
+        let anotherPlant = Plant(name: "to keep")
+        let testPlants = [plantToDelete, anotherPlant]
+
+        ModelUtils.save(testPlants, fileName: "plantData.json")
+
+        let model = PlantModel()
+
+        model.delete(plantToDelete)
+
+        XCTAssertEqual(model.plants.count, 1)
+        XCTAssertFalse(model.plants.contains(plantToDelete))
+    }
+
+    func testPlantModelSavesCorrectly() {
+        let model = PlantModel()
+        let newPlant = Plant(name: "new plant")
+        model.plants.append(newPlant)
+        model.save()
+
+        let loadedPlants: [Plant] = ModelUtils.load("plantData.json")
+
+        XCTAssertEqual(loadedPlants.count, 4)
+        XCTAssertTrue(loadedPlants.contains(newPlant))
+    }
 }

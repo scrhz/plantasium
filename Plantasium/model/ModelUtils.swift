@@ -50,3 +50,11 @@ struct ModelUtils {
         return documentDirectory.appendingPathComponent(name)
     }
 }
+
+extension ModelUtils {
+    static let stubPlants = [
+        Plant(name: "John"), //, feedPeriod: TimeInterval(oneWeek)),
+        Plant(name: "Mary"), //, feedPeriod: TimeInterval(2 * oneWeek)),
+        Plant(name: "Abdul"), //, feedPeriod: TimeInterval(0.5 * Double(oneWeek)))
+    ]
+}
