@@ -1,12 +1,19 @@
 import SwiftUI
 
 struct PlantDetailView: View {
-    @State var plant: Plant
+    @ObservedObject var plant: Plant
 
     var body: some View {
         Form {
             Section(header: Text("Plant Details")) {
                 TextField("Name", text: $plant.name)
+            }
+            Section(header: Text("Feeding")) {
+                Picker("Feed Period", selection: $plant.feedPeriod) {
+                    Text("One week").tag(7)
+                    Text("10 days").tag(10)
+                    Text("Fortnight").tag(14)
+                }
             }
         }
     }

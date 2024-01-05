@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct ListView: View {
-    @StateObject var plantModel: PlantModel
+    @ObservedObject var plantModel: PlantModel
 
     var body: some View {
         List(plantModel.plants) { plant in

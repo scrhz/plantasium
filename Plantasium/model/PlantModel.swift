@@ -41,34 +41,29 @@ class PlantModel: ObservableObject {
 class Plant: Hashable, Codable, Identifiable, ObservableObject {
     var id: UUID
     @Published var name: String
-    var feedPeriod: TimeInterval
+    @Published var feedPeriod: FeedPeriod
     var lastFeed: Date?
-//    var species: String?
-//    private var imageName: String?
 
     var image: Image {
-//        Image(imageName ?? "plant-placeholder")
         Image("plant-placeholder")
     }
 
     var nextFeed: Date {
         guard let lastFeed = lastFeed else { return Date.now }
-        return Date(timeInterval: feedPeriod, since: lastFeed)
+        return Date(timeInterval: TimeInterval(feedPeriod * Utils.oneDay), since: lastFeed)
     }
+
+    typealias FeedPeriod = Int
 
     init(
         name: String,
-        feedPeriod: TimeInterval = TimeInterval(Utils.oneWeek),
+        feedPeriod: FeedPeriod = 7,
         lastFeed: Date? = nil
-//        species: String? = nil,
-//        imageName: String? = nil
     ) {
         self.id = UUID()
         self.name = name
         self.feedPeriod = feedPeriod
         self.lastFeed = lastFeed
-        //        self.species = species
-        //        self.imageName = imageName
     }
 
     enum CodingKeys: CodingKey {
@@ -90,7 +85,7 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         try name = values.decode(String.self, forKey: .name)
         try id = values.decode(UUID.self, forKey: .id)
-        try feedPeriod = values.decode(TimeInterval.self, forKey: .feedPeriod)
+        try feedPeriod = values.decode(Int.self, forKey: .feedPeriod)
         try? lastFeed = values.decode(Date.self, forKey: .lastFeed)
     }
 
