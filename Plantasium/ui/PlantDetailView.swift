@@ -10,9 +10,9 @@ struct PlantDetailView: View {
             }
             Section(header: Text("Feeding")) {
                 Picker("Feed Period", selection: $plant.feedPeriod) {
-                    Text("One week").tag(7)
-                    Text("10 days").tag(10)
-                    Text("Fortnight").tag(14)
+                    ForEach(Plant.FeedPeriod.allCases) { feedPeriod in
+                        Text(feedPeriod.label).tag(feedPeriod)
+                    }
                 }
             }
         }

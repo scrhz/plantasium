@@ -39,6 +39,25 @@ class PlantModel: ObservableObject {
 }
 
 class Plant: Hashable, Codable, Identifiable, ObservableObject {
+    enum FeedPeriod: Int, CaseIterable, Identifiable {
+        var id: Self { self }
+
+        case oneWeek = 7
+        case tenDays = 10
+        case fortnight = 14
+
+        var label: String {
+            switch self {
+            case .oneWeek:
+                return "One Week"
+            case .tenDays:
+                return "Ten Days"
+            case .fortnight:
+                return "One Fortnight"
+            }
+        }
+    }
+
     var id: UUID
     @Published var name: String
     @Published var feedPeriod: FeedPeriod
@@ -50,14 +69,12 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
 
     var nextFeed: Date {
         guard let lastFeed = lastFeed else { return Date.now }
-        return Date(timeInterval: TimeInterval(feedPeriod * Utils.oneDay), since: lastFeed)
+        return Date(timeInterval: TimeInterval(feedPeriod.rawValue * Utils.oneDay), since: lastFeed)
     }
-
-    typealias FeedPeriod = Int
 
     init(
         name: String,
-        feedPeriod: FeedPeriod = 7,
+        feedPeriod: FeedPeriod = .oneWeek,
         lastFeed: Date? = nil
     ) {
         self.id = UUID()
@@ -77,7 +94,7 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         var values = encoder.container(keyedBy: CodingKeys.self)
         try values.encode(name, forKey: .name)
         try values.encode(id, forKey: .id)
-        try values.encode(feedPeriod, forKey: .feedPeriod)
+        try values.encode(feedPeriod.rawValue, forKey: .feedPeriod)
         try values.encode(lastFeed, forKey: .lastFeed)
     }
 
@@ -85,7 +102,7 @@ class Plant: Hashable, Codable, Identifiable, ObservableObject {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         try name = values.decode(String.self, forKey: .name)
         try id = values.decode(UUID.self, forKey: .id)
-        try feedPeriod = values.decode(Int.self, forKey: .feedPeriod)
+        try feedPeriod = FeedPeriod(rawValue: values.decode(Int.self, forKey: .feedPeriod)) ?? .oneWeek
         try? lastFeed = values.decode(Date.self, forKey: .lastFeed)
     }
 

@@ -5,40 +5,35 @@ import SwiftUI
 final class PlantTests: TestCase {
     func testPlantInitialisesCorrectlyForEssentialParameters() {
         let testPlant = Plant(
-            name: "foo",
-            feedPeriod: TimeInterval(TestUtils.oneWeek)
+            name: "foo"
         )
 
         XCTAssertEqual(testPlant.name, "foo")
-        XCTAssertEqual(testPlant.feedPeriod, TimeInterval(TestUtils.oneWeek))
+        XCTAssertEqual(testPlant.feedPeriod.rawValue, 7)
         XCTAssertEqual(
             Calendar.current.compare(testPlant.nextFeed, to: Date.now, toGranularity: .minute),
             ComparisonResult.orderedSame
         )
-//        XCTAssertNil(testPlant.species)
         XCTAssertNotNil(testPlant.image)
     }
 
     func testPlantInitialisesCorrectlyForExtraParameters() {
         let testPlant = Plant(
             name: "foo",
-            feedPeriod: TimeInterval(TestUtils.oneWeek),
-//            species: "bar",
+            feedPeriod: .tenDays,
             lastFeed: Date(timeIntervalSinceNow: TimeInterval(-(2 * TestUtils.oneWeek)))
-//            imageName: "doesntExist"
         )
 
         XCTAssertEqual(testPlant.name, "foo")
-        XCTAssertEqual(testPlant.feedPeriod, TimeInterval(TestUtils.oneWeek))
+        XCTAssertEqual(testPlant.feedPeriod.rawValue, 10)
         XCTAssertEqual(
             Calendar.current.compare(
                 testPlant.nextFeed,
-                to: Date(timeInterval: TimeInterval(-TestUtils.oneWeek), since: Date.now),
+                to: Date(timeInterval: TimeInterval(-4 * TestUtils.oneDay), since: Date.now),
                 toGranularity: .minute
             ),
             ComparisonResult.orderedSame
         )
-//        XCTAssertEqual(testPlant.species, "bar")
         XCTAssertNotNil(testPlant.image)
     }
 }

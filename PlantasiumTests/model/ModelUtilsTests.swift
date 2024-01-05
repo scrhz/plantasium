@@ -15,13 +15,11 @@ final class ModelDataTests: TestCase {
     }
 
     func testSavesMixedOptionalityPlantsInCorrectFormat() {
-        let plantEssential = Plant(name: "foo", feedPeriod: TimeInterval())
+        let plantEssential = Plant(name: "foo")
         let plantAll = Plant(
             name: "bar",
-            feedPeriod: TimeInterval(64000),
+            feedPeriod: .fortnight,
             lastFeed: Date(timeIntervalSince1970: TimeInterval(TestUtils.oneWeek * 100))
-//            species: "lorem",
-//            imageName: "ipsum"
         )
 
         let plants = [plantEssential, plantAll]
