@@ -2,13 +2,8 @@ import XCTest
 import SwiftUI
 @testable import Plantasium
 
-final class ModelDataTests: XCTestCase {
+final class ModelDataTests: TestCase {
     let testDataJson = "testData.json"
-
-    override func setUp() {
-        super.setUp()
-        continueAfterFailure = false
-    }
 
     override func tearDown() {
         let fileManager = FileManager()
@@ -20,22 +15,21 @@ final class ModelDataTests: XCTestCase {
     }
 
     func testSavesMixedOptionalityPlantsInCorrectFormat() {
-        let plantEssential = Plant(name: "foo", feedPeriod: TimeInterval())
+        let plantEssential = Plant(name: "foo")
         let plantAll = Plant(
             name: "bar",
-            feedPeriod: TimeInterval(64000),
-            species: "lorem",
-            lastFeed: Date(timeIntervalSince1970: TimeInterval(TestUtils.oneWeek * 100)),
-            imageName: "ipsum"
+            feedPeriod: .fortnight,
+            lastFeed: Date(timeIntervalSince1970: TimeInterval(TestUtils.oneWeek * 100))
         )
 
         let plants = [plantEssential, plantAll]
 
         ModelUtils.save(plants, fileName: testDataJson)
 
-        let newPlants: [Plant] = ModelUtils.load(testDataJson)
+        let loadedPlants: [Plant] = ModelUtils.load(testDataJson)
 
-        XCTAssertNotNil(newPlants)
-        XCTAssertEqual(newPlants.count, 2)
+        XCTAssertNotNil(loadedPlants)
+        XCTAssertEqual(loadedPlants.count, 2)
+        XCTAssertEqual(plants, loadedPlants)
     }
 }

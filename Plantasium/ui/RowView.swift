@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct RowView: View {
-    var plant: Plant
+    @ObservedObject var plant: Plant
 
     var body: some View {
         HStack {
@@ -12,8 +12,6 @@ struct RowView: View {
             VStack(alignment: .leading) {
                 Text(plant.name)
                     .bold()
-                Text(plant.species ?? "Unknown species")
-                    .italic()
             }
             Spacer()
             VStack(alignment: .trailing) {
@@ -29,7 +27,7 @@ struct RowView: View {
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RowView(plant: stubPlants[0])
+            RowView(plant: PlantModel().plants[0])
         }.previewLayout(.sizeThatFits)
     }
 }

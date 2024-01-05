@@ -1,4 +1,5 @@
+import Foundation
+
 struct Utils {
-    static let oneDay = 60 * 60 * 24
-    static let oneWeek = 7 * oneDay
+    static let oneDay: Int = 60 * 60 * 24
 }
