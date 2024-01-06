@@ -10,8 +10,16 @@ struct ListView: View {
                 PlantDetailEditView(plant: plant)
             } label: {
                 RowView(plant: plant)
-            }.swipeActions {
-                Button(action: { plantModel.delete(plant) }, label: { Label("Delete", systemImage: "trash") }).tint(.red)
+            }.swipeActions(edge: .trailing) {
+                Button(
+                    action: { plantModel.delete(plant) },
+                    label: { Label("Delete", systemImage: "trash") }
+                ).tint(.red)
+            }.swipeActions(edge: .leading) {
+                Button(
+                    action: { plant.feed() },
+                    label: { Label("Feed", systemImage: "drop") }
+                ).tint(.green)
             }
         }.toolbar {
             NavigationLink {

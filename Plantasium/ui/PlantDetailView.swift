@@ -26,7 +26,7 @@ struct PlantView_Previews: PreviewProvider {
 }
 
 struct PlantDetailEditView: View {
-    @State var plant: Plant
+    @ObservedObject var plant: Plant
 
     var body: some View {
         PlantDetailView(plant: plant).navigationTitle("Edit Plant")
@@ -35,7 +35,7 @@ struct PlantDetailEditView: View {
 
 struct PlantDetailNewView: View {
     @StateObject var plant = Plant(name: "")
-    @StateObject var plantModel: PlantModel
+    @ObservedObject var plantModel: PlantModel
 
     var body: some View {
         PlantDetailView(plant: plant).toolbar {

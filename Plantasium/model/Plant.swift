@@ -5,7 +5,7 @@ class Plant {
     var id: UUID
     @Published var name: String
     @Published var feedPeriod: FeedPeriod
-    var lastFeed: Date?
+    @Published var lastFeed: Date?
 
     var image: Image {
         Image("plant-placeholder")
@@ -35,7 +35,7 @@ class Plant {
         try? lastFeed = values.decode(Date.self, forKey: .lastFeed)
     }
 
-    func feed() {
+    public func feed() {
         lastFeed = Date.now
     }
 }
