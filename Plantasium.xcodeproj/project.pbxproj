@@ -330,11 +330,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/api/ApiSettings.swift",
+				$SRCROOT/Plantasium/api/ApiSettings.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source .env\n\nFILEPATH=$PWD/Plantasium/api/ApiSettings.swift;\n\necho $FILEPATH\n\nif [ -f $FILEPATH ]\nthen\nrm $FILEPATH;\nfi\n\ncat >$FILEPATH <<EOL\n/// Note: this file is generated during the build process and so should be modified only from the build script\n\nimport Foundation\n\npublic class ApiAuthSettings {\n    public let apiKey = \"$PERENUAL_API_KEY\"\n}\n\nEOL\n";
+			shellScript = "source .env\n\nFILEPATH=$SRCROOT/Plantasium/api/ApiSettings.swift;\n\nif [ -f $FILEPATH ]\nthen\nrm $FILEPATH;\nfi\n\ncat >$FILEPATH <<EOL\n/// Note: this file is generated during the build process and so should be modified only from the build script\n\nimport Foundation\n\npublic class ApiAuthSettings {\n    public let apiKey = \"$PERENUAL_API_KEY\"\n}\n\nEOL\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
