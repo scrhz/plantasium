@@ -15,6 +15,7 @@
 		371D1D9628EA0B2400BC71E2 /* PlantasiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */; };
 		371D1D9828EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */; };
 		3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746756D2920FECE00958500 /* PlantDetailView.swift */; };
+		376639402B5DB90500DB4154 /* ApiSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766393F2B5DB90500DB4154 /* ApiSettings.swift */; };
 		3772F68528F5ADBE00DA0921 /* PlantModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */; };
 		3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68628F5ADDB00DA0921 /* PlantModel.swift */; };
 		37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B93756290C0D3200231C56 /* ModelUtils.swift */; };
@@ -54,6 +55,7 @@
 		371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITests.swift; sourceTree = "<group>"; };
 		371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3746756D2920FECE00958500 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
+		3766393F2B5DB90500DB4154 /* ApiSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSettings.swift; sourceTree = "<group>"; };
 		3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModelTests.swift; sourceTree = "<group>"; };
 		3772F68628F5ADDB00DA0921 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		37B93756290C0D3200231C56 /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				371D1D7A28EA0B2300BC71E2 /* PlantasiumApp.swift */,
 				37D99F92291EF17400CF33AD /* Utils.swift */,
 				371D1D7E28EA0B2300BC71E2 /* Assets.xcassets */,
+				3766393E2B5DB8D300DB4154 /* api */,
 				37B93758290C0FD400231C56 /* model */,
 				371D1D8028EA0B2300BC71E2 /* Preview Content */,
 				3720881328FC13B8002E6C93 /* ui */,
@@ -156,6 +159,14 @@
 				3746756D2920FECE00958500 /* PlantDetailView.swift */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		3766393E2B5DB8D300DB4154 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				3766393F2B5DB90500DB4154 /* ApiSettings.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		376D49BD291EACAB000A749A /* model */ = {
@@ -322,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source .env\n";
+			shellScript = "source .env\n\nFILEPATH=$PWD/Plantasium/api/ApiSettings.swift;\n\necho $FILEPATH\n\nif [ -f $FILEPATH ]\nthen\nrm $FILEPATH;\nfi\n\ncat >$FILEPATH <<EOL\n/// Note: this file is generated during the build process and so should be modified only from the build script\n\nimport Foundation\n\npublic class ApiAuthSettings {\n    public let apiKey = \"$PERENUAL_API_KEY\"\n}\n\nEOL\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -334,6 +345,7 @@
 				37B9375A290C110200231C56 /* RowView.swift in Sources */,
 				37DC118E290EE9AD001B5088 /* ListView.swift in Sources */,
 				37D99F93291EF17400CF33AD /* Utils.swift in Sources */,
+				376639402B5DB90500DB4154 /* ApiSettings.swift in Sources */,
 				3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */,
 				37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */,
 				371901D32B48718300C27514 /* Plant.swift in Sources */,
