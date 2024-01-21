@@ -185,6 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 371D1D9B28EA0B2400BC71E2 /* Build configuration list for PBXNativeTarget "Plantasium" */;
 			buildPhases = (
+				373665882B5D9F6800949652 /* Source Env Vars */,
 				371D1D7328EA0B2300BC71E2 /* Sources */,
 				371D1D7428EA0B2300BC71E2 /* Frameworks */,
 				371D1D7528EA0B2300BC71E2 /* Resources */,
@@ -302,6 +303,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		373665882B5D9F6800949652 /* Source Env Vars */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Source Env Vars";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source .env\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		371D1D7328EA0B2300BC71E2 /* Sources */ = {
