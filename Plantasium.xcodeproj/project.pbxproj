@@ -24,6 +24,10 @@
 		37D99F93291EF17400CF33AD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99F92291EF17400CF33AD /* Utils.swift */; };
 		37D99F95291EF1E400CF33AD /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99F94291EF1E400CF33AD /* TestUtils.swift */; };
 		37DC118E290EE9AD001B5088 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC118D290EE9AD001B5088 /* ListView.swift */; };
+		37F67C652B69B2AC0094CFDE /* FAQDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */; };
+		37FF688B2B698BAB00474C08 /* FAQListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF688A2B698BAB00474C08 /* FAQListView.swift */; };
+		37FF688D2B698FCB00474C08 /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF688C2B698FCB00474C08 /* QuestionAPI.swift */; };
+		37FF68992B6999DF00474C08 /* QuestionAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF68982B6999DF00474C08 /* QuestionAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		37D99F92291EF17400CF33AD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		37D99F94291EF1E400CF33AD /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		37DC118D290EE9AD001B5088 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetailView.swift; sourceTree = "<group>"; };
+		37FF688A2B698BAB00474C08 /* FAQListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQListView.swift; sourceTree = "<group>"; };
+		37FF688C2B698FCB00474C08 /* QuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
+		37FF68982B6999DF00474C08 /* QuestionAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,7 @@
 		371D1D8A28EA0B2400BC71E2 /* PlantasiumTests */ = {
 			isa = PBXGroup;
 			children = (
+				37FF68972B6999CC00474C08 /* api */,
 				376D49BD291EACAB000A749A /* model */,
 				37D99F94291EF1E400CF33AD /* TestUtils.swift */,
 			);
@@ -157,6 +166,8 @@
 				37DC118D290EE9AD001B5088 /* ListView.swift */,
 				37B93759290C110200231C56 /* RowView.swift */,
 				3746756D2920FECE00958500 /* PlantDetailView.swift */,
+				37FF688A2B698BAB00474C08 /* FAQListView.swift */,
+				37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				3766393F2B5DB90500DB4154 /* ApiSettings.swift */,
+				37FF688C2B698FCB00474C08 /* QuestionAPI.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -187,6 +199,14 @@
 				371901D22B48718300C27514 /* Plant.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		37FF68972B6999CC00474C08 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				37FF68982B6999DF00474C08 /* QuestionAPITests.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,9 +366,12 @@
 				37B9375A290C110200231C56 /* RowView.swift in Sources */,
 				37DC118E290EE9AD001B5088 /* ListView.swift in Sources */,
 				37D99F93291EF17400CF33AD /* Utils.swift in Sources */,
+				37FF688B2B698BAB00474C08 /* FAQListView.swift in Sources */,
 				376639402B5DB90500DB4154 /* ApiSettings.swift in Sources */,
+				37FF688D2B698FCB00474C08 /* QuestionAPI.swift in Sources */,
 				3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */,
 				37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */,
+				37F67C652B69B2AC0094CFDE /* FAQDetailView.swift in Sources */,
 				371901D32B48718300C27514 /* Plant.swift in Sources */,
 				3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */,
 				371D1D7B28EA0B2300BC71E2 /* PlantasiumApp.swift in Sources */,
@@ -362,6 +385,7 @@
 				3772F68528F5ADBE00DA0921 /* PlantModelTests.swift in Sources */,
 				371901D52B4871E400C27514 /* PlantTests.swift in Sources */,
 				37D99F95291EF1E400CF33AD /* TestUtils.swift in Sources */,
+				37FF68992B6999DF00474C08 /* QuestionAPITests.swift in Sources */,
 				37D99F8F291EF00E00CF33AD /* ModelUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

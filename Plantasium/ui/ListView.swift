@@ -22,10 +22,19 @@ struct ListView: View {
                 ).tint(.green)
             }
         }.toolbar {
-            NavigationLink {
-                PlantDetailNewView(plantModel: plantModel)
-            } label: {
-                Label("Add new plant", systemImage: "plus")
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    PlantDetailNewView(plantModel: plantModel)
+                } label: {
+                    Label("Add new plant", systemImage: "plus")
+                }
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                NavigationLink {
+                    FAQListView()
+                } label: {
+                    Label("Get help", systemImage: "questionmark")
+                }
             }
         }
     }
