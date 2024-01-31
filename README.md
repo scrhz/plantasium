@@ -23,6 +23,14 @@ The app is written entirely in native SwiftUI.
 - Currently the first page of FAQs from Perenual can be viewed from the the `?` Help Button in the top left of the main plant list view.
 - See the [main file for the API implementation](Plantasium/api/QuestionAPI.swift)
 
+<br>
+<p float="left" align="middle">
+<img src="./Resources/Screenshots/Screenshot01_Home.png" width=200>
+<img src="./Resources/Screenshots/Screenshot02_FAQ.png" width=200>
+<img src="./Resources/Screenshots/Screenshot03_NewPlant.png" width=200>
+</p>
+<br>
+
 ### Still to come
 
 - Local notifications
