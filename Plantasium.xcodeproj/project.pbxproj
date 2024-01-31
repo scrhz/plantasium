@@ -15,6 +15,7 @@
 		371D1D9628EA0B2400BC71E2 /* PlantasiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */; };
 		371D1D9828EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */; };
 		3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3746756D2920FECE00958500 /* PlantDetailView.swift */; };
+		376639402B5DB90500DB4154 /* ApiSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766393F2B5DB90500DB4154 /* ApiSettings.swift */; };
 		3772F68528F5ADBE00DA0921 /* PlantModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */; };
 		3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772F68628F5ADDB00DA0921 /* PlantModel.swift */; };
 		37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B93756290C0D3200231C56 /* ModelUtils.swift */; };
@@ -23,6 +24,10 @@
 		37D99F93291EF17400CF33AD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99F92291EF17400CF33AD /* Utils.swift */; };
 		37D99F95291EF1E400CF33AD /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99F94291EF1E400CF33AD /* TestUtils.swift */; };
 		37DC118E290EE9AD001B5088 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC118D290EE9AD001B5088 /* ListView.swift */; };
+		37F67C652B69B2AC0094CFDE /* FAQDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */; };
+		37FF688B2B698BAB00474C08 /* FAQListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF688A2B698BAB00474C08 /* FAQListView.swift */; };
+		37FF688D2B698FCB00474C08 /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF688C2B698FCB00474C08 /* QuestionAPI.swift */; };
+		37FF68992B6999DF00474C08 /* QuestionAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF68982B6999DF00474C08 /* QuestionAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,7 @@
 		371D1D9528EA0B2400BC71E2 /* PlantasiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITests.swift; sourceTree = "<group>"; };
 		371D1D9728EA0B2400BC71E2 /* PlantasiumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantasiumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3746756D2920FECE00958500 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
+		3766393F2B5DB90500DB4154 /* ApiSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSettings.swift; sourceTree = "<group>"; };
 		3772F68428F5ADBE00DA0921 /* PlantModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModelTests.swift; sourceTree = "<group>"; };
 		3772F68628F5ADDB00DA0921 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		37B93756290C0D3200231C56 /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 		37D99F92291EF17400CF33AD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		37D99F94291EF1E400CF33AD /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		37DC118D290EE9AD001B5088 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetailView.swift; sourceTree = "<group>"; };
+		37FF688A2B698BAB00474C08 /* FAQListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQListView.swift; sourceTree = "<group>"; };
+		37FF688C2B698FCB00474C08 /* QuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
+		37FF68982B6999DF00474C08 /* QuestionAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 				371D1D7A28EA0B2300BC71E2 /* PlantasiumApp.swift */,
 				37D99F92291EF17400CF33AD /* Utils.swift */,
 				371D1D7E28EA0B2300BC71E2 /* Assets.xcassets */,
+				3766393E2B5DB8D300DB4154 /* api */,
 				37B93758290C0FD400231C56 /* model */,
 				371D1D8028EA0B2300BC71E2 /* Preview Content */,
 				3720881328FC13B8002E6C93 /* ui */,
@@ -133,6 +144,7 @@
 		371D1D8A28EA0B2400BC71E2 /* PlantasiumTests */ = {
 			isa = PBXGroup;
 			children = (
+				37FF68972B6999CC00474C08 /* api */,
 				376D49BD291EACAB000A749A /* model */,
 				37D99F94291EF1E400CF33AD /* TestUtils.swift */,
 			);
@@ -154,8 +166,19 @@
 				37DC118D290EE9AD001B5088 /* ListView.swift */,
 				37B93759290C110200231C56 /* RowView.swift */,
 				3746756D2920FECE00958500 /* PlantDetailView.swift */,
+				37FF688A2B698BAB00474C08 /* FAQListView.swift */,
+				37F67C642B69B2AC0094CFDE /* FAQDetailView.swift */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		3766393E2B5DB8D300DB4154 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				3766393F2B5DB90500DB4154 /* ApiSettings.swift */,
+				37FF688C2B698FCB00474C08 /* QuestionAPI.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		376D49BD291EACAB000A749A /* model */ = {
@@ -178,6 +201,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		37FF68972B6999CC00474C08 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				37FF68982B6999DF00474C08 /* QuestionAPITests.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 371D1D9B28EA0B2400BC71E2 /* Build configuration list for PBXNativeTarget "Plantasium" */;
 			buildPhases = (
+				373665882B5D9F6800949652 /* Source Env Vars */,
 				371D1D7328EA0B2300BC71E2 /* Sources */,
 				371D1D7428EA0B2300BC71E2 /* Frameworks */,
 				371D1D7528EA0B2300BC71E2 /* Resources */,
@@ -303,6 +335,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		373665882B5D9F6800949652 /* Source Env Vars */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Source Env Vars";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Plantasium/api/ApiSettings.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source .env\n\nFILEPATH=$SRCROOT/Plantasium/api/ApiSettings.swift;\n\nif [ -f $FILEPATH ]\nthen\nrm $FILEPATH;\nfi\n\ncat >$FILEPATH <<EOL\n/// Note: this file is generated during the build process and so should be modified only from the build script\n\nimport Foundation\n\npublic struct ApiAuthSettings {\n    static let apiKey = \"$PERENUAL_API_KEY\"\n}\n\nEOL\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		371D1D7328EA0B2300BC71E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -311,8 +366,12 @@
 				37B9375A290C110200231C56 /* RowView.swift in Sources */,
 				37DC118E290EE9AD001B5088 /* ListView.swift in Sources */,
 				37D99F93291EF17400CF33AD /* Utils.swift in Sources */,
+				37FF688B2B698BAB00474C08 /* FAQListView.swift in Sources */,
+				376639402B5DB90500DB4154 /* ApiSettings.swift in Sources */,
+				37FF688D2B698FCB00474C08 /* QuestionAPI.swift in Sources */,
 				3746756E2920FECE00958500 /* PlantDetailView.swift in Sources */,
 				37B93757290C0D3200231C56 /* ModelUtils.swift in Sources */,
+				37F67C652B69B2AC0094CFDE /* FAQDetailView.swift in Sources */,
 				371901D32B48718300C27514 /* Plant.swift in Sources */,
 				3772F68728F5ADDB00DA0921 /* PlantModel.swift in Sources */,
 				371D1D7B28EA0B2300BC71E2 /* PlantasiumApp.swift in Sources */,
@@ -326,6 +385,7 @@
 				3772F68528F5ADBE00DA0921 /* PlantModelTests.swift in Sources */,
 				371901D52B4871E400C27514 /* PlantTests.swift in Sources */,
 				37D99F95291EF1E400CF33AD /* TestUtils.swift in Sources */,
+				37FF68992B6999DF00474C08 /* QuestionAPITests.swift in Sources */,
 				37D99F8F291EF00E00CF33AD /* ModelUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
