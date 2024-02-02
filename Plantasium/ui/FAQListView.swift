@@ -19,12 +19,10 @@ struct FAQListView: View {
         }
         .navigationTitle("Plant FAQs & Help")
         .task {
-            isLoading = true
             await search()
         }
         .searchable(text: $searchText).onSubmit(of: .search) {
             Task {
-                isLoading = true
                 await search(term: searchText)
             }
         }
@@ -32,6 +30,7 @@ struct FAQListView: View {
 
     func search(term: String? = nil) async {
         do {
+            isLoading = true
             questionResults = try await QuestionAPI().requestFAQs(searchTerm: term)
             isLoading = false
         } catch {
