@@ -1,3 +1,8 @@
+<p float="left" align="middle">
+<img src="./Resources/PlantasiumIcon.png" width=400>
+</p>
+<br>
+
 # Plantasium
 
 Plantasium formed out of a need to track when my house plants had last been watered, and to notify me when they needed watering again.
