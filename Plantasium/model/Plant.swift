@@ -13,7 +13,7 @@ class Plant {
 
     var nextFeed: Date {
         guard let lastFeed = lastFeed else { return Date.now }
-        return Date(timeInterval: TimeInterval(feedPeriod.rawValue * Utils.oneDay), since: lastFeed)
+        return Date(timeInterval: TimeInterval(feedPeriod.rawValue * DateUtils.oneDay), since: lastFeed)
     }
 
     init(
