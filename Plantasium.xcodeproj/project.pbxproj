@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370F25C82B8237D70084EC7E /* NotificationCentreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370F25C72B8237D70084EC7E /* NotificationCentreTests.swift */; };
 		371901D32B48718300C27514 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371901D22B48718300C27514 /* Plant.swift */; };
 		371901D52B4871E400C27514 /* PlantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371901D42B4871E400C27514 /* PlantTests.swift */; };
 		371D1D7B28EA0B2300BC71E2 /* PlantasiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1D7A28EA0B2300BC71E2 /* PlantasiumApp.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370F25C72B8237D70084EC7E /* NotificationCentreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCentreTests.swift; sourceTree = "<group>"; };
 		371901D22B48718300C27514 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		371901D42B4871E400C27514 /* PlantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTests.swift; sourceTree = "<group>"; };
 		371D1D7728EA0B2300BC71E2 /* Plantasium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plantasium.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				37FF68972B6999CC00474C08 /* api */,
 				376D49BD291EACAB000A749A /* model */,
 				37D99F94291EF1E400CF33AD /* TestUtils.swift */,
+				370F25C72B8237D70084EC7E /* NotificationCentreTests.swift */,
 			);
 			path = PlantasiumTests;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				37D99F95291EF1E400CF33AD /* TestUtils.swift in Sources */,
 				37FF68992B6999DF00474C08 /* QuestionAPITests.swift in Sources */,
 				37D99F8F291EF00E00CF33AD /* ModelUtilsTests.swift in Sources */,
+				370F25C82B8237D70084EC7E /* NotificationCentreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
