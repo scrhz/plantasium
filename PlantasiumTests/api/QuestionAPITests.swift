@@ -7,4 +7,10 @@ class QuestionAPITests: TestCase {
         XCTAssertNotNil(faqs)
         XCTAssertFalse(faqs.isEmpty)
     }
+
+    func testSearchingEmptyStringReturnsValidFAQs() async {
+        let faqs = try! await QuestionAPI().requestFAQs(searchTerm: "")
+        XCTAssertNotNil(faqs)
+        XCTAssertFalse(faqs.isEmpty)
+    }
 }

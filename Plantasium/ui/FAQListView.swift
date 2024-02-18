@@ -3,8 +3,13 @@ import SwiftUI
 struct FAQListView: View {
     @State private var searchText = ""
     @State private var questionResults: [FAQ] = []
+    @State private var isLoading = false
 
     var body: some View {
+        if isLoading {
+            ProgressView()
+        }
+
         List(questionResults) { faq in
             NavigationLink {
                 FAQDetailView(faq: faq)
@@ -14,11 +19,22 @@ struct FAQListView: View {
         }
         .navigationTitle("Plant FAQs & Help")
         .task {
-            do {
-                questionResults = try await QuestionAPI().requestFAQs()
-            } catch {
-                print("Couldn't request FAQs")
+            await search()
+        }
+        .searchable(text: $searchText).onSubmit(of: .search) {
+            Task {
+                await search(term: searchText)
             }
+        }
+    }
+
+    func search(term: String? = nil) async {
+        do {
+            isLoading = true
+            questionResults = try await QuestionAPI().requestFAQs(searchTerm: term)
+            isLoading = false
+        } catch {
+            print("Couldn't request FAQs")
         }
     }
 }

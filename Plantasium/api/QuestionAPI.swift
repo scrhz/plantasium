@@ -1,9 +1,16 @@
 import Foundation
 
+struct DefaultImage: Codable {
+    let original_url: String?
+    let regular_url: String?
+    let medium_url: String?
+}
+
 struct FAQ: Identifiable, Codable {
     let id: Int
     let question: String
     let answer: String
+    let default_image: DefaultImage?
 }
 
 struct FAQResponse: Codable {
