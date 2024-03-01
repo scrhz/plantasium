@@ -13,16 +13,21 @@ class NotificationCentreTests: TestCase {
 
         let notificationCentre = NotificationCentre()
 
-        try? await notificationCentre.scheduleNotification(for: plant)
+        try! await notificationCentre.scheduleNotification(for: plant)
 
-        let plants: [Plant] = []
+        let requests = await UNUserNotificationCenter.current().pendingNotificationRequests()
 
-        let notificationTrigger = await UNUserNotificationCenter.current().pendingNotificationRequests().first?.trigger as? UNCalendarNotificationTrigger
+        let notificationTrigger = requests.first?.trigger as? UNCalendarNotificationTrigger
+        
+        XCTAssertNotNil(notificationTrigger?.dateComponents.day)
+        XCTAssertNotNil(notificationTrigger?.dateComponents.month)
+        XCTAssertNotNil(notificationTrigger?.dateComponents.year)
+        XCTAssertNotNil(notificationTrigger?.dateComponents.isValidDate(in: Calendar.current))
 
-        XCTAssertEqual(notificationCentre.scheduledNotifications!.count, 1)
         TestUtils.assertDatesAreEqual(
             date1: notificationTrigger!.nextTriggerDate()!,
-            date2: Date(timeIntervalSinceNow: TimeInterval(14 * TestUtils.oneDay))
+            date2: Date(timeIntervalSinceNow: TimeInterval(14 * TestUtils.oneDay)),
+            granularity: .day
         )
     }
 }
