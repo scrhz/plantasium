@@ -12,6 +12,26 @@ struct RowView: View {
             .year(.twoDigits)
     }
 
+    enum FeedPeriodMessage: String {
+        case oneDay = "everyday"
+        case oneWeek = "every week"
+        case tenDays = "every 10 days"
+        case fortnight = "once a fortnight"
+
+        init(for feedPeriod: Plant.FeedPeriod) {
+            switch feedPeriod {
+            case .oneDay:
+                self = .oneDay
+            case .oneWeek:
+                self = .oneWeek
+            case .tenDays:
+                self = .tenDays
+            case .fortnight:
+                self = .fortnight
+            }
+        }
+    }
+
     var body: some View {
         HStack {
             plant.image
@@ -20,6 +40,8 @@ struct RowView: View {
             VStack(alignment: .leading) {
                 Text(plant.name)
                     .bold()
+                Text("Feed \(FeedPeriodMessage(for: plant.feedPeriod).rawValue)")
+                    .fontWeight(.ultraLight)
             }
             Spacer()
             VStack(alignment: .trailing) {

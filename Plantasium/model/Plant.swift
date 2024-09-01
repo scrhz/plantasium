@@ -44,12 +44,15 @@ extension Plant {
     enum FeedPeriod: Int, CaseIterable, Identifiable {
         var id: Self { self }
 
+        case oneDay = 1
         case oneWeek = 7
         case tenDays = 10
         case fortnight = 14
 
         var label: String {
             switch self {
+            case .oneDay: 
+                return "One Day"
             case .oneWeek:
                 return "One Week"
             case .tenDays:
