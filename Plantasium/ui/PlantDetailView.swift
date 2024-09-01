@@ -37,13 +37,27 @@ struct PlantDetailNewView: View {
     @StateObject var plant = Plant(name: "")
     @ObservedObject var plantModel: PlantModel
 
+    @Environment(\.dismiss) var dismiss
+    @State var showAlert = false
+
     var body: some View {
         PlantDetailView(plant: plant).toolbar {
             Button {
-                plantModel.plants.append(plant)
+                if plantModel.plants.contains(where: { existingPlant in
+                    existingPlant.name == plant.name
+                }) {
+                    showAlert = true
+                } else {
+                    plantModel.plants.append(plant)
+                    dismiss()
+                }
             } label: {
                 Text("Save")
-            }.disabled(plant.name.isEmpty)
+            }
+            .disabled(plant.name.isEmpty)
+            .alert("Name duplication", isPresented: $showAlert) {
+                Button("Ok", role: .cancel) {}
+            }
         }.navigationTitle("New Plant")
     }
 }
