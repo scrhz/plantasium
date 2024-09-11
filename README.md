@@ -1,5 +1,5 @@
 <p float="left" align="middle">
-<img src="./Resources/PlantasiumIcon.png" width=400>
+<img src="./Resources/PlantasiumIcon_transparent_bg.png" width=400>
 </p>
 <br>
 

@@ -13,7 +13,7 @@ class Plant {
 
     var nextFeed: Date {
         guard let lastFeed = lastFeed else { return Date.now }
-        return Date(timeInterval: TimeInterval(feedPeriod.rawValue * Utils.oneDay), since: lastFeed)
+        return Date(timeInterval: TimeInterval(feedPeriod.rawValue * DateUtils.oneDay), since: lastFeed)
     }
 
     init(
@@ -44,12 +44,15 @@ extension Plant {
     enum FeedPeriod: Int, CaseIterable, Identifiable {
         var id: Self { self }
 
+        case oneDay = 1
         case oneWeek = 7
         case tenDays = 10
         case fortnight = 14
 
         var label: String {
             switch self {
+            case .oneDay: 
+                return "One Day"
             case .oneWeek:
                 return "One Week"
             case .tenDays:

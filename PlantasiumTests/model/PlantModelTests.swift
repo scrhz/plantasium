@@ -1,14 +1,27 @@
 import XCTest
 @testable import Plantasium
 
+final class NotificationCentreStub: NotificationManaging {
+    var scheduledNotificationData: [Plant: Bool] = [:]
+    func scheduleNotification(for plant: Plant) async throws {
+        scheduledNotificationData[plant] = true
+    }
+}
+
 final class PlantModelTests: TestCase {
+    var model: PlantModel!
+
     override func setUp() {
         super.setUp()
         try? FileManager().removeItem(at: ModelUtils.filePath("plantData.json"))
     }
 
+    func createPlantModel() {
+        model = PlantModel()
+    }
+
     func testPlantModelCreatesStubPlantsIfMissing() {
-        let model = PlantModel()
+        createPlantModel()
 
         XCTAssertEqual(model.plants.count, 3)
         XCTAssertEqual(model.plants, ModelUtils.stubPlants)
@@ -22,7 +35,7 @@ final class PlantModelTests: TestCase {
 
         ModelUtils.save(testPlants, fileName: "plantData.json")
 
-        let model = PlantModel()
+        createPlantModel()
 
         XCTAssertEqual(model.plants.count, 2)
         XCTAssertEqual(model.plants, testPlants)
@@ -35,7 +48,7 @@ final class PlantModelTests: TestCase {
 
         ModelUtils.save(testPlants, fileName: "plantData.json")
 
-        let model = PlantModel()
+        createPlantModel()
 
         model.delete(plantToDelete)
 
@@ -44,7 +57,7 @@ final class PlantModelTests: TestCase {
     }
 
     func testPlantModelSavesCorrectly() {
-        let model = PlantModel()
+        createPlantModel()
         let newPlant = Plant(name: "new plant")
         model.plants.append(newPlant)
         model.save()
