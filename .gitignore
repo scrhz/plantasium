@@ -1,3 +1,5 @@
 Plantasium.xcodeproj/xcuserdata/
+*xcworkspace/xcuserdata/*
 ./Plantasium/api/ApiSettings.swift
+*/ApiSettings.swift
 .env

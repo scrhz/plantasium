@@ -2,12 +2,6 @@ import XCTest
 @testable import Plantasium
 
 class NotificationCentreTests: TestCase {
-    func testNotificationCentreInitialisesProperly() {
-        let notificationCentre = NotificationCentre()
-
-        XCTAssertNotNil(notificationCentre)
-    }
-
     func testNotificationCentrePostsNotificationForGivenPlantTime() async {
         let plant = Plant(name: "test plant", feedPeriod: .fortnight, lastFeed: Date.now)
 

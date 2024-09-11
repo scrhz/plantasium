@@ -1,7 +1,11 @@
 import UserNotifications
 
-class NotificationCentre: ObservableObject {
-    let notificationCentre = UNUserNotificationCenter.current()
+protocol NotificationManaging {
+    func scheduleNotification(for plant: Plant) async throws
+}
+
+class NotificationCentre: ObservableObject, NotificationManaging {
+    private let notificationCentre = UNUserNotificationCenter.current()
 
     func scheduleNotification(for plant: Plant) async throws {
         let notification = UNMutableNotificationContent()
@@ -15,7 +19,7 @@ class NotificationCentre: ObservableObject {
         do {
             try await notificationCentre.add(request)
         } catch {
-            throw error
+            fatalError("Couldn't schedule notification with error:\n \(error)")
         }
     }
 

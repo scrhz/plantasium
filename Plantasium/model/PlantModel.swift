@@ -1,7 +1,12 @@
 import Foundation
 import SwiftUI
 
-class PlantModel: ObservableObject {
+protocol ModelControlling {
+    func save()
+    func delete(_ plant: Plant)
+}
+
+class PlantModel: ObservableObject, ModelControlling {
     @Published var plants: [Plant] = []
 
     private var modelExists: Bool {

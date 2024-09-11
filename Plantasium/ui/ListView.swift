@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ListView: View {
     @ObservedObject var plantModel: PlantModel
+    var notificationCentre: NotificationCentre
 
     var body: some View {
         List(plantModel.plants) { plant in
@@ -17,9 +18,15 @@ struct ListView: View {
                 ).tint(.red)
             }.swipeActions(edge: .leading) {
                 Button(
-                    action: { plant.feed() },
+                    action: {
+                        plant.feed()
+                    },
                     label: { Label("Feed", systemImage: "drop") }
-                ).tint(.green)
+                )
+                .tint(.green)
+                .task {
+                    try? await notificationCentre.scheduleNotification(for: plant)
+                }
             }
         }.toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -42,6 +49,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(plantModel: PlantModel())
+        ListView(plantModel: PlantModel(), notificationCentre: NotificationCentre())
     }
 }

@@ -9,7 +9,7 @@ struct PlantasiumApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ListView(plantModel: plantModel)
+                ListView(plantModel: plantModel, notificationCentre: notificationCentre)
             }
             .navigationTitle("Plants")
             .task {
