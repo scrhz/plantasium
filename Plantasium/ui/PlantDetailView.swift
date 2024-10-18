@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PlantDetailView: View {
     @ObservedObject var plant: Plant
+    @State private var showFileImporter = false
 
     var body: some View {
         Form {
@@ -12,6 +13,32 @@ struct PlantDetailView: View {
                 Picker("Feed Period", selection: $plant.feedPeriod) {
                     ForEach(Plant.FeedPeriod.allCases) { feedPeriod in
                         Text(feedPeriod.label).tag(feedPeriod)
+                    }
+                }
+            }
+            Section(header: Text("Image")) {
+                VStack(alignment: .center) {
+                    plant.image
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fill)
+                        .padding()
+                    Button {
+                        
+                    } label: {
+                        Text("Edit")
+                    }
+                    .buttonStyle(.bordered)
+                    .padding()
+                    .fileImporter(
+                        isPresented: $showFileImporter,
+                        allowedContentTypes: [.image]
+                    ) { result in
+                        switch result {
+                        case .success(let success):
+                            break
+                        case .failure(let failure):
+                            break
+                        }
                     }
                 }
             }
